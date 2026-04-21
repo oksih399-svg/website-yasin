@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YareCreative - Solusi Produk Digital</title>
+  
+  <!-- Font Modern -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-color: #050505;
+      --card-bg: #121212;
+      --accent-color: #ffffff;
+      --text-main: #ffffff;
+      --text-dim: #a0a0a0;
+      --border-color: #222222;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header Styling */
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+      background: linear-gradient(to bottom, #fff 0%, #888 100%);
+      -webkit-background-clip: text;
+      background-clip : text ;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-dim);
+      font-size: 1rem;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    /* Card Styling */
+    .card {
+      background: var(--card-bg);
+      width: 100%;
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 30px;
+      margin-bottom: 20px;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #444;
+    }
+
+    .badge {
+      background: var(--accent-color);
+      color: black;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+
+    /* Button Styling */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--accent-color);
+      color: black;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 16px;
+      font-weight: 600;
+      margin-top: 25px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: #e0e0e0;
+      transform: scale(1.02);
+    }
+
+    /* Feature List */
+    .features {
+      list-style: none;
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    .features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    .icon-check {
+      color: #4ade80;
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Testimonials */
+    .testimonial-box {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .testimonial-item {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 12px;
+      font-style: italic;
+      position: relative;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: auto;
+      padding-top: 40px;
+      text-align: center;
+      color: #444;
+      font-size: 0.8rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-color);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <header>
+    <h1>YareCreative</h1>
+    <p class="subtitle">Solusi Produk Digital Kekinian untuk Cuan Online 🚀</p>
+  </header>
+
+  <!-- Product Card -->
+  <div class="card animate-up delay-1">`
+    <div class="badge">Terlaris</div>
+    <h2><i data-lucide="shopping-bag"></i> Produk Digital Premium</h2>
+    <p>Dapatkan akses ke ratusan template, aset desain, dan tools marketing siap pakai. Mulai bisnis digitalmu hari ini cukup dari smartphone.</p>
+    
+    <!-- Link Terupdate -->
+    <a href="https://lynk.id/yareofficial" target="_blank" class="btn">
+      Beli Sekarang <i data-lucide="arrow-right"></i>
+    </a>
+  </div>
+
+  <!-- Benefits Card -->
+  <div class="card animate-up delay-2">
+    <h2><i data-lucide="sparkles"></i> Mengapa Kami?</h2>
+    <ul class="features">
+      <li><i data-lucide="check-circle-2" class="icon-check"></i> Langsung pakai (No-code/Beginner friendly)</li>
+      <li><i data-lucide="check-circle-2" class="icon-check"></i> Hak jual kembali (Resell Rights)</li>
+      <li><i data-lucide="check-circle-2" class="icon-check"></i> Update konten secara berkala</li>
+      <li><i data-lucide="check-circle-2" class="icon-check"></i> Grup support eksklusif</li>
+    </ul>
+  </div>
+
+  <!-- Testimonial Card -->
+  <div class="card animate-up delay-3">
+    <h2><i data-lucide="message-square"></i> Apa Kata Mereka?</h2>
+    <div class="testimonial-box">
+      <div class="testimonial-item">
+        "Nggak nyangka jualan produk digital bisa se-simple ini. Modalnya sekali, untungnya berkali-kali! 🔥"
+        <div style="margin-top: 8px; font-weight: 600; font-style: normal; font-size: 0.8rem; color: #fff;">— Budi S.</div>
+      </div>
+      <div class="testimonial-item">
+        "Template-nya sangat profesional dan gampang diedit di Canva. Recommended bgt!"
+        <div style="margin-top: 8px; font-weight: 600; font-style: normal; font-size: 0.8rem; color: #fff;">— Sarah A.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Promo Card -->
+  <div class="card animate-up delay-4" style="border-color: #ffffff33; background: linear-gradient(145deg, #121212 0%, #1a1a1a 100%);">
+    <h2 style="color: #fff;"><i data-lucide="clock"></i> Promo Terbatas</h2>
+    <p>Ambil kesempatan ini sebelum harga naik normal. Penawaran spesial hanya berlaku untuk minggu ini!</p>
+    <div id="countdown" style="margin-top: 15px; font-weight: 700; font-size: 1.2rem; letter-spacing: 2px;">
+      00 : 59 : 59
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 YareCreative • Built with Passion</p>
+  </div>
+
+</div>
+
+<script>
+  // Initialize Lucide Icons
+  lucide.createIcons();
+
+  // Simple Countdown Timer Logic
+  function startTimer() {
+    let hours = 23;
+    let minutes = 59;
+    let seconds = 59;
+    
+    const display = document.getElementById('countdown');
+    
+    setInterval(() => {
+      seconds--;
+      if (seconds < 0) {
+        seconds = 59;
+        minutes--;
+      }
+      if (minutes < 0) {
+        minutes = 59;
+        hours--;
+      }
+      
+      const h = hours < 10 ? '0' + hours : hours;
+      const m = minutes < 10 ? '0' + minutes : minutes;
+      const s = seconds < 10 ? '0' + seconds : seconds;
+      
+      display.textContent = `${h} : ${m} : ${s}`;
+    }, 1000);
+  }
+
+  window.onload = startTimer;
+</script>
+
+</body>
+<html>
